@@ -35,23 +35,60 @@ function initRewriteButton() {
     select.appendChild(option);
   });
 
+  // Rewrite button container
+  const btnContainer = document.createElement("div");
+  btnContainer.style.position = "relative";
+  btnContainer.style.width = "100%";
+
+  // Animation GIF container
+  const animationContainer = document.createElement("div");
+  animationContainer.style.width = "24px";
+  animationContainer.style.height = "24px";
+  animationContainer.style.marginRight = "5px";
+  animationContainer.style.display = "flex";
+  animationContainer.style.alignItems = "center";
+  animationContainer.style.justifyContent = "center";
+
+  const animationImg = document.createElement("img");
+  // Convert Google Drive link to direct image URL
+  animationImg.src = ``;
+  animationImg.style.width = "20px";
+  animationImg.style.height = "20px";
+  animationImg.style.objectFit = "contain";
+
+  animationContainer.appendChild(animationImg);
+
   // Rewrite button
   const btn = document.createElement("button");
   btn.id = "rewrite-with-ai-btn";
-  btn.innerText = "Rewrite with AI";
   btn.style.cssText = `
       width: 100%;
       height: 28px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       border: none;
       background: #f3f2ef;
       border-radius: 4px;
       cursor: pointer;
       font-size: 12px;
       color: #000;
+      position: relative;
+      z-index: 2;
+      padding: 0 5px;
     `;
+
+  // Clear the text content and create a layout for the button
+  const btnContent = document.createElement("div");
+  btnContent.style.display = "flex";
+  btnContent.style.alignItems = "center";
+  btnContent.style.width = "100%";
+
+  // Text element
+  const btnText = document.createElement("span");
+  btnText.innerText = "Rewrite with AI";
+  btnText.style.flexGrow = "1";
+  btnText.style.textAlign = "center";
 
   // Rewrite click logic
   btn.addEventListener("click", async () => {
@@ -62,16 +99,17 @@ function initRewriteButton() {
       return alert("✍️ Please write something in the post box first.");
     }
 
-    btn.innerText = "Rewriting…";
+    btnText.innerText = "Rewriting…";
     btn.disabled = true;
 
     try {
-    //   const res = await fetch("http://localhost:3000/api/rewrite", { // for local testing
-        const res = await fetch("https://linked-lift.vercel.app/api/rewrite", { //for production
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ input: text, tone }),
-        });
+      //   const res = await fetch("http://localhost:3000/api/rewrite", { // for local testing
+      const res = await fetch("https://linked-lift.vercel.app/api/rewrite", {
+        //for production
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ input: text, tone }),
+      });
 
       const { rewritten } = await res.json();
       if (rewritten) {
@@ -83,11 +121,14 @@ function initRewriteButton() {
       console.error(e);
       alert("⚠️ Network error.");
     } finally {
-      btn.innerText = "Rewrite with AI";
+      btnText.innerText = "Rewrite with AI";
       btn.disabled = false;
     }
   });
 
+  btnContent.appendChild(animationContainer);
+  btnContent.appendChild(btnText);
+  btn.appendChild(btnContent);
   container.appendChild(select);
   container.appendChild(btn);
   li.appendChild(container);
