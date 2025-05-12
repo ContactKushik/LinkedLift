@@ -51,10 +51,10 @@ function initRewriteButton() {
 
   const animationImg = document.createElement("img");
   // Convert Google Drive link to direct image URL
-  animationImg.src = ``;
-  animationImg.style.width = "20px";
-  animationImg.style.height = "20px";
-  animationImg.style.objectFit = "contain";
+  animationImg.src = `https://raw.githubusercontent.com/ContactKushik/LinkedLift-/refs/heads/main/public/animation.gif`;
+  animationImg.style.width = "30px";
+  animationImg.style.height = "30px";
+  animationImg.style.objectFit = "cover";
 
   animationContainer.appendChild(animationImg);
 
@@ -68,14 +68,16 @@ function initRewriteButton() {
       align-items: center;
       justify-content: flex-start;
       border: none;
-      background: #f3f2ef;
+      background: #08011D;
       border-radius: 4px;
       cursor: pointer;
       font-size: 12px;
-      color: #000;
+      color: #fff;
       position: relative;
       z-index: 2;
       padding: 0 5px;
+      overflow: hidden;
+      font-weight: 700;
     `;
 
   // Clear the text content and create a layout for the button
