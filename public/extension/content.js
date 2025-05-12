@@ -66,11 +66,12 @@ function initRewriteButton() {
     btn.disabled = true;
 
     try {
-      const res = await fetch("http://localhost:3000/api/rewrite", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ input: text, tone }),
-      });
+    //   const res = await fetch("http://localhost:3000/api/rewrite", { // for local testing
+        const res = await fetch("https://linked-lift.vercel.app/api/rewrite", { //for production
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ input: text, tone }),
+        });
 
       const { rewritten } = await res.json();
       if (rewritten) {
