@@ -82,7 +82,9 @@ export default function Home() {
             ))}
             <div>
               <button className="text-bold text-2xl bg-blue-600 hover:bg-blue-700 text-white  rounded-md font-medium w-full py-5">
-                <Link href="google.com">Download Now</Link>
+                <a href="https://github.com/ContactKushik/LinkedLift-/raw/refs/heads/main/public/LinkedLift.zip">
+                  Download Now
+                </a>
               </button>
             </div>
           </div>
