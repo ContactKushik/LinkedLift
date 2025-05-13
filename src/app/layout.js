@@ -21,7 +21,7 @@ export const metadata = {
   icons: {
     icon: [
       // { url: "/animation.gif", type: "image/gif" },
-      { url: "/favicon1.ico", type: "image/x-icon" }, // Fallback favicon
+      { url: "/favicon.ico", type: "image/x-icon" }, // Fallback favicon
     ],
   },
 };
