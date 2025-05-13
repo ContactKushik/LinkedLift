@@ -1,5 +1,8 @@
+// app/layout.jsx
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,9 +24,43 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-900 text-zinc-100`}
       >
         {children}
+
+        {/* Footer */}
+        <footer className="mt-0 text-center text-sm text-zinc-500 w-full border-t border-zinc-800 pt-6 pb-4 bg-zinc-800">
+          <p className="mb-4">
+            Made with <span className="text-red-500">zeal</span> &{" "}
+            <span className="text-blue-400">compassion</span> ~ Kushik Sahu
+          </p>
+          <div className="flex justify-center gap-6 text-zinc-400">
+            <a
+              href="https://github.com/ContactKushik"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+            >
+              <FaGithub size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/kushik-sahu-b09757191/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+            >
+              <FaLinkedin size={20} />
+            </a>
+            <a
+              href="https://www.instagram.com/kushik_sahu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+            >
+              <FaInstagram size={20} />
+            </a>
+          </div>
+        </footer>
       </body>
     </html>
   );
