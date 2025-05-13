@@ -29,10 +29,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        {/* Additional favicon declaration for broader browser support */}
-        <link rel="icon" href="/animation.gif" type="image/gif" />
-      </head>
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-900 text-zinc-100`}
       >
