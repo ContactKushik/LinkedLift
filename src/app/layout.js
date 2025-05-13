@@ -18,11 +18,21 @@ export const metadata = {
   title: "LinkedLift",
   description:
     'A sleek, modern browser extension interface overlaid on a LinkedIn post, showing a "Rewrite" button being clicked. The post transforms into a well-written, concise version with tone options like "Professional", "Friendly", and "Bold" displayed as buttons or dropdown. The background should subtly show LinkedIn\'s blue branding colors, with clean UI elements representing AI-enhanced productivity. Include a floating label or badge with the extension name "LinkedInLift" and a tagline like "Rewrite Smarter. Post Better."',
+  icons: {
+    icon: [
+      { url: "/animation.gif", type: "image/gif" },
+      { url: "/favicon.ico", type: "image/x-icon" }, // Fallback favicon
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Additional favicon declaration for broader browser support */}
+        <link rel="icon" href="/animation.gif" type="image/gif" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-900 text-zinc-100`}
       >
