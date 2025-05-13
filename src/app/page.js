@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { IoMdDownload } from "react-icons/io";
 export default function Home() {
   return (
     <div className="min-h-screen w-full bg-zinc-900 text-zinc-100 font-sans flex flex-col items-center justify-center px-6 py-8">
@@ -81,16 +81,16 @@ export default function Home() {
               </div>
             ))}
             <div>
-              <button className="text-bold text-2xl bg-blue-600 hover:bg-blue-700 text-white  rounded-md font-medium w-full py-5">
-                <a href="https://github.com/ContactKushik/LinkedLift-/raw/refs/heads/main/public/LinkedLift.zip">
+              <a href="https://github.com/ContactKushik/LinkedLift-/raw/refs/heads/main/public/LinkedLift.zip">
+                <button className="text-bold text-2xl bg-blue-600 hover:bg-blue-700 text-white  rounded-md font-medium w-full py-5 cursor-pointer flex items-center justify-center gap-2 transition">
+                  <IoMdDownload />
                   Download Now
-                </a>
-              </button>
+                </button>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
   );
 }
