@@ -20,8 +20,8 @@ export const metadata = {
     'A sleek, modern browser extension interface overlaid on a LinkedIn post, showing a "Rewrite" button being clicked. The post transforms into a well-written, concise version with tone options like "Professional", "Friendly", and "Bold" displayed as buttons or dropdown. The background should subtly show LinkedIn\'s blue branding colors, with clean UI elements representing AI-enhanced productivity. Include a floating label or badge with the extension name "LinkedInLift" and a tagline like "Rewrite Smarter. Post Better."',
   icons: {
     icon: [
-      { url: "/animation.gif", type: "image/gif" },
-      { url: "/favicon.ico", type: "image/x-icon" }, // Fallback favicon
+      // { url: "/animation.gif", type: "image/gif" },
+      { url: "/favicon1.ico", type: "image/x-icon" }, // Fallback favicon
     ],
   },
 };
